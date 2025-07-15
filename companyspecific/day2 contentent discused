@@ -1,0 +1,337 @@
+2. Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve unit assignment problems before the lecture. Today he got one tricky question. The problem statement is “A positive integer has been given as an input. Convert decimal value to binary representation. Toggle all bits of it including the most significant bit. Print the positive integer value after toggling all bits”.
+
+Constrains-
+
+1<=N<=100
+
+Example 1:
+
+Input :
+
+10  -> Integer
+
+Output :
+
+5    -> result- Integer
+
+Explanation:
+
+Binary representation of 10 is 1010. After toggling the bits(1010), will get 0101 which represents “5”. Hence output will print “5”.
+
+ Toggle All Bits Including MSB
+// Algorithm:
+// 1. Find the number of bits in N using Integer.toBinaryString(N).length().
+// 2. Create a mask with all 1's of that length.
+// 3. XOR the mask with N to toggle the bits.
+import java.util.*;
+class ToggleBits {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int bits = Integer.toBinaryString(n).length();
+//int mask = (1 << (int)(log2(n) + 1)) - 1;
+ int mask = (1 << bits) - 1;
+ System.out.println(n ^ mask);
+ }
+}
+
+3.Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to cycling with his friends. 
+
+So every time when the months starts he counts the number of sundays he will get to enjoy. Considering the month can start with any day, be it Sunday, Monday…. Or so on.
+
+Count the number of Sunday jack will get within n number of days.
+
+ Example 1:
+
+Input 
+
+mon-> input String denoting the start of the month.
+
+13  -> input integer denoting the number of days from the start of the month.
+
+Output :
+
+2    -> number of days within 13 days.
+
+Explanation:
+
+The month start with mon(Monday). So the upcoming sunday will arrive in next 6 days. And then next Sunday in next 7 days and so on.
+
+Now total number of days are 13. It means 6 days to first sunday and then remaining 7 days will end up in another sunday. Total 2 sundays may fall within 13 days.
+
+//  Count Sundays in N Days
+// Algorithm:
+// 1. Map the input day to an index (0 for sun, 1 for mon, etc.).
+// 2. Count how many times (index + i) % 7 == 0 for i in range 0 to N-1.
+class CountSundays {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ String day = sc.nextLine();
+ int n = sc.nextInt();
+ String[] week = {"sun", "mon", "tue", "wed", "thu", "fri", "sat"};
+ int index = 0;
+ for (int i = 0; i < 7; i++) if (week[i].equals(day)) index = i;
+ int count = 0;
+ for (int i = 0; i < n; i++) if ((index + i) % 7 == 0) count++;
+ System.out.println(count);
+ }
+}
+
+4. Airport security officials have confiscated several item of the passengers at the security check point. All the items have been dumped into a huge box (array). Each item possesses a certain amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of integer values. The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
+
+Example :
+
+Input :
+
+7  -> Value of N
+
+[1,0,2,0,1,0,2]-> Element of arr[0] to arr[N-1], while input each element is separated by new line.
+
+Output :
+
+0 0 0 1 1 2 2  -> Element after sorting based on risk severity 
+
+Example 2:
+
+input : 10  -> Value of N 
+
+[2,1,0,2,1,0,0,1,2,0] -> Element of arr[0] to arr[N-1], while input each element is separated by a new line.
+
+Output : 
+
+0 0 0 0 1 1 1 2 2 2  ->Elements after sorting based on risk severity.
+
+Explanation:
+
+In the above example, the input is an array of size N consisting of only 0’s, 1’s and 2s. The output is a sorted array from 0 to 2 based on risk severity.
+
+ Sort Items by Risk (0, 1, 2)
+// Algorithm:
+// 1. Count the number of 0s, 1s, and 2s.
+// 2. Print 0s first, then 1s, then 2s.
+class SortRisk {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int[] count = new int[3];
+ for (int i = 0; i < n; i++) count[sc.nextInt()]++;
+ for (int i = 0; i < 3; i++)
+ for (int j = 0; j < count[i]; j++)
+ System.out.print(i + " ");
+ }
+} 
+
+5.Given an integer array Arr of size N the task is to find the count of elements whose value is greater than all of its prior elements.
+
+Note : 1st element of the array should be considered in the count of the result.
+
+For example,
+
+Arr[]={7,4,8,2,9}
+
+As 7 is the first element, it will consider in the result.
+
+8 and 9 are also the elements that are greater than all of its previous elements.
+
+Since total of  3 elements is present in the array that meets the condition.
+
+Hence the output = 3.
+
+ Example 1:
+
+Input 
+
+5 -> Value of N, represents size of Arr
+
+7-> Value of Arr[0]
+
+4 -> Value of Arr[1]
+
+8-> Value of Arr[2]
+
+2-> Value of Arr[3]
+
+9-> Value of Arr[4]
+
+Output :
+
+3
+
+Example 2:
+
+5   -> Value of N, represents size of Arr
+
+3  -> Value of Arr[0]
+
+4 -> Value of Arr[1]
+
+5 -> Value of Arr[2]
+
+8 -> Value of Arr[3]
+
+9 -> Value of Arr[4]
+
+Output : 
+
+5
+
+Constraints
+
+1<=N<=20
+
+1<=Arr[i]<=10000
+
+ Algorithm:
+// 1. Start with max = Integer.MIN_VALUE.
+// 2. For each element, if it is greater than max, count it and update max.
+class GreaterThanPrevious {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int max = Integer.MIN_VALUE, count = 0;
+ for (int i = 0; i < n; i++) {
+ int val = sc.nextInt();
+ if (val > max) {
+ count++;
+ max = val;
+ }
+ }
+ System.out.println(count);
+ }
+}
+
+6.A supermarket maintains a pricing format for all its products. A value N is printed on each product. When the scanner reads the value N on the item, the product of all the digits in the value N is the price of the item. The task here is to design the software such that given the code of any item N the product (multiplication) of all the digits of value should be computed(price).
+
+Example 1:
+
+Input :
+
+5244 -> Value of N
+
+Output :
+160 -> Price 
+
+Explanation:
+
+From the input above 
+
+Product of the digits 5,2,4,4
+
+5*2*4*4= 160
+
+Hence, output is 160.
+
+
+Product of Digits
+// Algorithm:
+// 1. While N > 0, multiply the last digit with result and remove the digit.
+class DigitProduct {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt(), product = 1;
+ while (n > 0) {
+ product *= n % 10;
+ n /= 10;
+ }
+ System.out.println(product);
+ }
+}
+
+7. A furnishing company is manufacturing a new collection of curtains. The curtains are of two colors aqua(a) and black (b). The curtains color is represented as a string(str) consisting of a’s and b’s of length N. Then, they are packed (substring) into L number of curtains in each box. The box with the maximum number of ‘aqua’ (a) color curtains is labeled. The task here is to find the number of ‘aqua’ color curtains in the labeled box.
+
+Note :
+
+If ‘L’ is not a multiple of N, the remaining number of curtains should be considered as a substring too. In simple words, after dividing the curtains in sets of ‘L’, any curtains left will be another set(refer example 1)
+
+Example 1:
+
+Input :
+
+bbbaaababa -> Value of str
+
+3    -> Value of L
+
+Output:
+
+3   -> Maximum number of a’s
+
+Explanation:
+
+From the input given above.
+
+Dividing the string into sets of 3 characters each 
+
+Set 1: {b,b,b}
+
+Set 2: {a,a,a}
+
+Set 3: {b,a,b}
+
+Set 4: {a} -> leftover characters also as taken as another set
+
+Among all the sets, Set 2 has more number of a’s. The number of a’s in set 2 is 3.
+
+Hence, the output is 3.
+
+Example 2:
+
+Input :
+
+abbbaabbb -> Value of str
+
+5   -> Value of L
+
+Output:
+
+2   -> Maximum number of a’s
+
+Explanation:
+
+From the input given above,
+
+Dividing the string into sets of 5 characters each.
+
+Set 1: {a,b,b,b,b}
+
+Set 2: {a,a,b,b,b}
+
+Among both the sets, set 2 has more number of a’s. The number of a’s in set 2 is 2.
+
+Hence, the output is 2.
+
+Constraints:
+
+1<=L<=10
+
+1<=N<=50
+
+The input format for testing 
+
+The candidate has to write the code to accept two inputs separated by a new line.
+
+First input- Accept string that contains character a and b only
+
+Second input- Accept value for N(Positive integer number)
+
+The output  format for testing
+
+The output should be a positive integer number of print the message(if any) given in the problem statement.(Check the output in Example 1, Example 2).
+
+ Max 'a' Curtains in Substrings of Size L
+// Algorithm:
+// 1. Split the string in substrings of length L.
+// 2. Count 'a's in each substring and return the maximum.
+class MaxCurtain {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ String str = sc.nextLine();
+ int l = sc.nextInt(), max = 0;
+ for (int i = 0; i < str.length(); i += l) {
+ int end = Math.min(i + l, str.length()), count = 0;
+ for (int j = i; j < end; j++)
+ if (str.charAt(j) == 'a') count++;
+ max = Math.max(max, count);
+ }
+ System.out.println(max);
+ } 
+} 
