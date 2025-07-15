@@ -1,0 +1,138 @@
+1.An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
+
+The president and prime minister of India will always sit next to each other.
+
+Example 1:
+
+Input :
+
+4   -> Value of N(No. of members)
+
+Output : 
+
+12  -> Possible ways of seating the members
+
+Explanation:
+
+2  members should always be next to each other. 
+
+So, 2 members can be in 2!ways
+
+Rest of the members can be arranged in (4-1)! ways.(1 is subtracted because the previously selected two members will be considered as single members now).
+
+So total possible ways 4 members can be seated around the circular table 2*6= 12.
+
+Hence, output is 12.
+
+Example 2:
+
+Input:
+
+10  -> Value of N(No. of members)
+
+Output :
+
+725760 -> Possible ways of seating the members 
+
+Explanation:
+
+2 members should always be next to each other.
+
+So, 2 members can be in 2! ways 
+
+Rest of the members can be arranged in (10-1)! Ways. (1 is subtracted because the previously selected two members will be considered as a single member now).
+
+So, total possible ways 10 members can be seated around a round table is 
+
+2*362880 = 725760 ways.
+
+Hence, output is 725760.
+
+The input format for testing
+
+The candidate has to write the code to accept one input 
+
+First input – Accept value of number of N(Positive integer number)
+
+The output format for testing 
+
+The output should be a positive integer number or print the message(if any) given in the problem statement(Check the output in example 1, example2)
+
+Constraints :
+
+2<=N<=50
+
+
+2.Particulate matters are the biggest contributors to Delhi pollution. The main reason behind the increase in the concentration of PMs include vehicle emission by applying Odd Even concept for all types of vehicles. The vehicles with the odd last digit in the registration number will be allowed on roads on odd dates and those with even last digit will on even dates.
+
+Given an integer array a[], contains the last digit of the registration number of N vehicles traveling on date D(a positive integer). The task is to calculate the total fine collected by the traffic police department from the vehicles violating the rules.
+
+Note : For violating the rule, vehicles would be fined as X Rs.
+
+Example 1:
+
+Input :
+
+4 -> Value of N
+
+{5,2,3,7} -> a[], Elements a[0] to a[N-1], during input each element is separated by a new line
+
+12 -> Value of D, i.e. date 
+
+200 -> Value of x i.e. fine
+
+Output :
+
+600  -> total fine collected 
+
+Explanation:
+
+Date D=12 means , only an even number of vehicles are allowed. 
+
+Find will be collected from 5,3 and 7 with an amount of 200 each.
+
+Hence, the output = 600.
+
+Example 2:
+
+Input :
+
+5   -> Value of N 
+
+{2,5,1,6,8}  -> a[], elements a[0] to a[N-1], during input each element is separated by new line
+
+3 -> Value of D i.e. date 
+
+300 -> Value of X i.e. fine 
+
+Output :
+
+900  -> total fine collected 
+
+Explanation:
+
+Date D=3 means only odd number vehicles with are allowed.
+
+Find will be collected from 2,6 and 8 with an amount of 300 each.
+
+Hence, the output = 900 
+
+Constraints:
+
+0<N<=100
+1<=a[i]<=9
+1<=D <=30
+100<=x<=5000 
+The input format for testing 
+
+The candidate has to write the code to accept 4 input(s).
+
+First input – Accept for N(Positive integer) values (a[]), where each value is separated by a new line.
+
+Third input – Accept value for D(Positive integer)
+
+Fourth input – Accept value for X(Positive integer )
+
+The output format for testing 
+
+The output should be a positive integer number (Check the output in Example 1, Example e) if no fine is collected then print ”0”.
