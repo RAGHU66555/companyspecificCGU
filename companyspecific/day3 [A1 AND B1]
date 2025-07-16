@@ -1,0 +1,487 @@
+8.An international round table conference will be held in india. Presidents from all over the world representing their respective countries will be attending the conference. The task is to find the possible number of ways(P) to make the N members sit around the circular table such that.
+
+The president and prime minister of India will always sit next to each other.
+
+Example 1:
+
+Input :
+
+4   -> Value of N(No. of members)
+
+Output : 
+
+12  -> Possible ways of seating the members
+
+Explanation:
+
+2  members should always be next to each other. 
+
+So, 2 members can be in 2!ways
+
+Rest of the members can be arranged in (4-1)! ways.(1 is subtracted because the previously selected two members will be considered as single members now).
+
+So total possible ways 4 members can be seated around the circular table 2*6= 12.
+
+Hence, output is 12.
+
+Example 2:
+
+Input:
+
+10  -> Value of N(No. of members)
+
+Output :
+
+725760 -> Possible ways of seating the members 
+
+Explanation:
+
+2 members should always be next to each other.
+
+So, 2 members can be in 2! ways 
+
+Rest of the members can be arranged in (10-1)! Ways. (1 is subtracted because the previously selected two members will be considered as a single member now).
+
+So, total possible ways 10 members can be seated around a round table is 
+
+2*362880 = 725760 ways.
+
+Hence, output is 725760.
+
+The input format for testing
+
+The candidate has to write the code to accept one input 
+
+First input – Accept value of number of N(Positive integer number)
+
+The output format for testing 
+
+The output should be a positive integer number or print the message(if any) given in the problem statement(Check the output in example 1, example2)
+
+Constraints :
+
+2<=N<=50
+
+  
+  Circular Seating with Two Fixed Members Together
+// Algorithm:
+// 1. Treat two fixed members as one block. Total ways = 2! * (N-1)!
+class RoundTable {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ System.out.println(2 * factorial(n - 1));
+ }
+ static int factorial(int n) {
+ int res = 1;
+ for (int i = 2; i <= n; i++) res *= i;
+ return res;
+ }
+}
+
+9.An intelligence agency has received reports about some threats. The reports consist of numbers in a mysterious method. There is a number “N” and another number “R”. Those numbers are studied thoroughly and it is concluded that all digits of the number ‘N’ are summed up and this action is performed ‘R’ number of times. The resultant is also a single digit that is yet to be deciphered. The task here is to find the single-digit sum of the given number ‘N’ by repeating the action ‘R’ number of times.
+
+If the value of ‘R’ is 0, print the output as ‘0’.
+
+Example 1:
+
+Input :
+
+99 -> Value of N
+
+3  -> Value of R
+
+Output :
+
+9  -> Possible ways to fill the cistern.
+
+Explanation:
+
+Here, the number N=99
+
+Sum of the digits N: 9+9 = 18
+Repeat step 2 ‘R’ times i.e. 3 tims  (9+9)+(9+9)+(9+9) = 18+18+18 =54
+Add digits of 54 as we need a single digit 5+4
+Hence , the output is 9.
+
+Example 2:
+
+Input :
+
+1234   -> Value of N
+
+2      -> Value of R
+
+Output :
+
+2  -> Possible ways to fill the cistern
+
+Explanation:
+
+Here, the number N=1234
+
+Sum of the digits of N: 1+2+3+4 =10
+Repeat step 2 ‘R’ times i.e. 2 times  (1+2+3+4)+(1+2+3+4)= 10+10=20
+Add digits of 20 as we need a single digit. 2+0=2
+Hence, the output is 2.
+
+Constraints:
+
+0<N<=1000
+
+0<=R<=50
+
+The Input format for testing 
+
+The candidate has to write the code to accept 2 input(s)
+
+First input- Accept value for N (positive integer number)
+
+Second input: Accept value for R(Positive integer number)
+
+The output format for testing 
+
+The output should be a positive integer number or print the message (if any) given in the problem statement. (Check the output in Example 1, Example 2).
+
+ Repeated Sum of Digits R Times
+// Algorithm:
+// 1. Sum digits of N.
+// 2. Multiply by R.
+// 3. Reduce to single digit by summing digits repeatedly.
+class RepeatedDigitSum {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ String n = sc.next();
+ int r = sc.nextInt();
+ if (r == 0) {
+ System.out.println(0);
+ return;
+ }
+ int sum = 0;
+ for (char c : n.toCharArray()) sum += c - '0';
+ sum *= r;
+ while (sum >= 10) {
+ int temp = 0;
+ while (sum > 0) {
+ temp += sum % 10;
+ sum /= 10;
+ }
+ sum = temp;
+ }
+ // [*] 8. Repeated Sum of Digits R Times
+// Algorithm:
+// 1. Sum digits of N.
+// 2. Multiply by R.
+// 3. Reduce to single digit by summing digits repeatedly.
+class RepeatedDigitSum {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ String n = sc.next();
+ int r = sc.nextInt();
+ if (r == 0) {
+ System.out.println(0);
+ return;
+ }
+ int sum = 0;
+ for (char c : n.toCharArray()) sum += c - '0';
+ sum *= r;
+ while (sum >= 10) {
+ int temp = 0;
+ while (sum > 0) {
+ temp += sum % 10;
+ sum /= 10;
+ }
+ sum = temp;
+ }
+ System.out.println(sum);
+ }
+}
+
+10.Particulate matters are the biggest contributors to Delhi pollution. The main reason behind the increase in the concentration of PMs include vehicle emission by applying Odd Even concept for all types of vehicles. The vehicles with the odd last digit in the registration number will be allowed on roads on odd dates and those with even last digit will on even dates.
+
+Given an integer array a[], contains the last digit of the registration number of N vehicles traveling on date D(a positive integer). The task is to calculate the total fine collected by the traffic police department from the vehicles violating the rules.
+
+Note : For violating the rule, vehicles would be fined as X Rs.
+
+Example 1:
+
+Input :
+
+4 -> Value of N
+
+{5,2,3,7} -> a[], Elements a[0] to a[N-1], during input each element is separated by a new line
+
+12 -> Value of D, i.e. date 
+
+200 -> Value of x i.e. fine
+
+Output :
+
+600  -> total fine collected 
+
+Explanation:
+
+Date D=12 means , only an even number of vehicles are allowed. 
+
+Find will be collected from 5,3 and 7 with an amount of 200 each.
+
+Hence, the output = 600.
+
+Example 2:
+
+Input :
+
+5   -> Value of N 
+
+{2,5,1,6,8}  -> a[], elements a[0] to a[N-1], during input each element is separated by new line
+
+3 -> Value of D i.e. date 
+
+300 -> Value of X i.e. fine 
+
+Output :
+
+900  -> total fine collected 
+
+Explanation:
+
+Date D=3 means only odd number vehicles with are allowed.
+
+Find will be collected from 2,6 and 8 with an amount of 300 each.
+
+Hence, the output = 900 
+
+Constraints:
+
+0<N<=100
+1<=a[i]<=9
+1<=D <=30
+100<=x<=5000 
+The input format for testing 
+
+The candidate has to write the code to accept 4 input(s).
+
+First input – Accept for N(Positive integer) values (a[]), where each value is separated by a new line.
+
+Third input – Accept value for D(Positive integer)
+
+Fourth input – Accept value for X(Positive integer )
+
+The output format for testing 
+
+The output should be a positive integer number (Check the output in Example 1, Example e) if no fine is collected then print ”0”.
+
+
+Traffic Fine on Odd-Even Violation
+// Algorithm:
+// 1. If date is even, odd vehicles are fined and vice versa.
+// 2. For each vehicle, check last digit and apply fine if it violates.
+class TrafficFine {
+ public static void main(String[] args) {
+Page 3
+TCS Algorithms in Java with Explanations
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int[] arr = new int[n];
+ for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+ int d = sc.nextInt();
+ int fine = sc.nextInt();
+ int total = 0;
+ boolean isEvenDate = d % 2 == 0;
+ for (int a : arr)
+ if ((a % 2 == 0) != isEvenDate) total += fine;
+ System.out.println(total);
+ }
+}
+
+11.Jack and Jill are playing a string game. Jack has given Jill two strings A and B. Jill has to derive a string C from A, by deleting elements from string A, such that string C does not contain any element of string B. Jill needs help to do this task. She wants a program to do this as she is lazy. Given strings A and B as input, give string C as Output.
+
+Example 1:
+
+Input:
+tiger     -> input string A
+ti          -> input string B
+Output:
+ger       -> Output string C
+Explanation:
+After removing “t” and “i” from “tiger”, we are left with “ger”.
+So, the answer is “ger”.
+Example 2:
+
+Input:
+processed     -> input string A
+esd                -> input string B
+Output:
+proc               -> Output string C
+Explanation:
+After removing “e” “s” and “d” from “processed”, we are left with “proc”.
+So, the answer is “proc”.
+Example 3:
+
+Input:
+talent        -> input string A
+tens          -> input string B
+Output:
+al              -> Output string C
+Explanation:
+After removing “t” “e” and “n” from “talent”, we are left with “al”.
+So, the answer is “al”.
+  
+1.Input strings A and B.
+2.Create a boolean[] array toRemove of size 256 (to handle all ASCII characters).
+3.Mark all characters of string B in the toRemove array:
+For each character ch in B, set toRemove[ch] = true.
+4.Create a StringBuilder for result C.
+5.Traverse each character in A:
+If toRemove[ch] is false, append it to C.
+Print the result string C.
+
+   
+
+import java.util.Scanner;
+
+public class StringGame {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String A = sc.nextLine(); // Input string A
+        String B = sc.nextLine(); // Input string B
+
+        // Step 1: Create boolean array to mark characters to remove
+        boolean[] toRemove = new boolean[256]; // ASCII size
+
+        // Step 2: Mark characters from string B
+        for (int i = 0; i < B.length(); i++) {
+            toRemove[B.charAt(i)] = true;
+        }
+
+        // Step 3: Build the result string C
+        StringBuilder C = new StringBuilder();
+        for (int i = 0; i < A.length(); i++) {
+            char ch = A.charAt(i);
+            if (!toRemove[ch]) {
+                C.append(ch);
+            }
+        }
+
+        // Step 4: Print the result
+        System.out.println(C.toString());
+    }
+}
+
+12.Joe was reading an interesting novel when all of a sudden, his 5-year-old son came to him and started asking a few questions about functions. He tried making him understand various functions, but his son didn’t get find it interesting. Then he created his function Absent number function A(S) According to this function, there is always the smallest positive integer number in a sequence that is not available.
+
+
+ In simple words, if you sort the given sequence, then the smallest integer number (other than 0) which is not present in the sequence is the Absent number. Consider a sequence S= [1, 2, 3], then B(S)=4. The minimum value greater than 0 which is not present here in the sequence is 4. Now his son found it interesting, so Joe extended this logic to sub-sequence. If there is a given sequence S, you have to find the Absent Number for each sub-sequence and then sum it up. If the answer is large, print the result modulo, 10^9 +7.
+
+Let say there exist a sequence with N = 3, and sequence S = [1, 2, 1]
+Below are the various sub-sequences of it,
+
+It will be 2N:
+
+[ ] : B([ ]) = 1
+[1] : B([1]) = 2
+[2] : B([2]) = 1
+[1] : B([1]) = 2
+[1, 2] : B([1, 2]) = 3
+[2, 1] : B([2, 1]) = 3
+[1, 1] : B([1, 1]) = 2
+[1, 2, 1] : B([1, 2, 1]) = 3
+
+Total sum of all B(S) = 1+2+1+2+3+3+2+3 = 17.
+Hence the answer is 17.
+
+Example 1:
+
+Input:
+2 -> input Integer, N
+1 1 -> input Integer, S
+Output:
+7 -> Output
+Explanation:
+In the above scenario below are the various sub-sequence and their respective functions of it:
+[ ] : B(l) = 1
+[1]: B([1])= 2
+[1]: B([1]) = 2
+[1,1]: B([1,1]) = 2
+Total sum of all B(S) = 1+2+2+2 = 7 Hence the answer is 7.
+Example 2:
+
+Input:
+3 -> Input integer, N
+1 2 1 -> Input integer, S
+Output:
+17->Output
+Explanation:
+In the above scenario below are the various sub-sequences and their respective functions of it.
+[ ] : B([ ]) = 1
+[1] : B([1]) = 2
+[2] : B([2]) =1
+[1] : B([1]) = 2
+[1, 2] : B([1, 2]) = 3
+[2, 1] : B([2, 1]) = 3
+[1, 1] : B([1, 1]) = 2
+[1, 2, 1] : B([1, 2, 1]) = 3
+Total sum of all B(S) = 1 + 2 + 1 + 2 + 3 + 3 + 2 + 3 = 17.
+Hence the answer is 17.
+
+ 1.Input N and array S.
+2.Total number of subsequences = 2^N.
+3.Loop through all binary masks from 0 to 2^N - 1:
+Each bitmask represents a subset (subsequence).
+For each mask:
+4.Extract the values that correspond to bits set to 1.
+5.Store the values in a Set to remove duplicates.
+6.Find the Absent Number from this set.
+Add the Absent Number to the running total.
+
+Output the total modulo 10^9 + 7.
+
+  
+import java.util.*;
+
+public class AbsentNumberSum {
+    static final int MOD = 1000000007;
+
+    // Function to get smallest missing positive integer from the set
+    public static int getAbsentNumber(Set<Integer> set) {
+        int i = 1;
+        while (set.contains(i)) {
+            i++;
+        }
+        return i;
+    }//1 2 1 3 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Input
+        int n = sc.nextInt();//4 
+        int[] S = new int[n];
+        //1 2 1 3 
+        for (int i = 0; i < n; i++) {
+            S[i] = sc.nextInt();
+        }
+
+        long sum = 0;
+        int total = 1 << n;//16 // Total subsequences = 2^n
+
+        // Step 2: Loop through all subsets
+        for (int mask = 0; mask < total; mask++) {
+            Set<Integer> subseq = new HashSet<>();
+
+            for (int i = 0; i < n; i++) {
+                if ((mask & (1 << i)) != 0) {
+                    subseq.add(S[i]);
+                }
+            }
+
+            // Step 3: Find Absent number
+            int absent = getAbsentNumber(subseq);
+            sum = (sum + absent) % MOD;
+        }
+
+        // Step 4: Output
+        System.out.println(sum);
+    }
+}
+
