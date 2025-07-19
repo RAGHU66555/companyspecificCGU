@@ -1,0 +1,538 @@
+51) What will be the output of the following pseudocode?
+Integer arr1[10], n, ctr, p , q, r
+Set arr1[] = {1, 2,  3, 4, 5, 2, 6, 5, 9}, n = 9 ,ctr = 0
+For (each p from 0 to n-1)
+ctr = 0
+for(each q from 0 to p-2)
+if(arr1[p] = arr1[q])
+ctr = ctr +1
+end if
+end for
+for (each r from p + 1 to n-1)
+if(arr1[p] = arr1[r])
+ctr = ctr + 1
+end if
+end for
+if(ctr EQUALS 0)
+print arr1[p]
+end if
+end for
+A. None of the mentioned options
+B.1 2 3 4 5 6 9
+C.1 3 4 6 9
+D. 2 5
+ 
+52) What will be the output of the following pseudocode?
+Integer a[5], b[5], c[5], k
+Set a[5] = { 2, 4, 6, 8, 10}
+Set b[5] = {5, 7, 9, 11, 13}
+for (each k from 0 to 4)
+c[k] = a[k] + b[k]
+end for
+for (each k from 0 to 4)
+print c[k]
+end for
+A. 11 12 13 14 15
+B. 7 11 15 19 23
+C. None of the mentioned options
+D. 7 8 9 10 11
+ 
+53) What will be the output of the following pseudocode?
+Integer a[],k,l,m
+Set a[10]= {20,15,25,13,12}
+set I=0
+For (each k from 0 to 4)
+I=I+a[k]
+End for
+m=I/5
+Print m
+A.58
+B.12
+C.10
+D.17
+ 
+54) What will be the output of the following pseudocode?
+Integer a[5][5],k,j;
+for(k =0;k<5;j++)
+a[k][j]=a[j][k]
+End for
+End for
+Which of the following  is true
+A. It transposes the given matrix A
+B. It doesn’t alter the given matrix A
+C. None of the mentioned options
+D. It makes the given matrix A, symmetric
+ 
+55) What will be the output of the following pseudocode?
+static char hello []=”hello”
+Choose the option which will print “hello” as an output
+puts(“hello”);
+A. All the mentioned
+B. printf(“%s”,”hello”);
+C. puts(hello);
+ 
+56) if (sizeof(double) > -1)
+ Printf ("M");
+ else
+ printf ("m");
+ return 0;
+ 
+A. Compiler error
+B. None
+C. M
+ 
+ 
+57) ______ is used to show hierarchy in a pseudo code.
+  Round brackets
+ A. Indentation
+ B. Semicolon
+ C. Curly braces
+58) If you are writing code to find the length of a linked list, then which of the following values should you provide for the temp pointer to terminate the program?
+· Maximum data value
+· None of the mentioned options
+· Address of the head pointer
+· Null
+ 
+59)  What will be the output of the following pseudocode?
+Integer a, b, c
+Set a = 10, b = 20
+for(c=a; c<=b; c=c+2)
+a = a+c
+b = b-a+c
+if(a>10)
+Print a
+else
+Print b
+end if
+end for
+A.20
+B.10
+C. 40
+D.30
+ 
+60) What will be the output of the following pseudocode?
+charstr[20]
+s=string length(str)
+str[5]=NULL
+s=strlen(str)
+print s
+garbage value
+A. 6
+B. 4
+C. 5
+ 
+61) What is the output?
+#include <stdio.h>
+void fun(char**);
+int main()
+{
+char *argv[] = {"ab", "cd", "ef", "gh"};
+fun(argv);
+return 0;
+}
+void fun(char **p)
+{
+char *t;
+    t = (p+= sizeof(int))[-1];
+printf("%s\n", t);
+}
+A. ab
+B. gh
+C. ef
+D. cd
+ 
+ 
+62) How many times Capgemini is printed on console?
+ 
+int main()
+{
+int a = 0;
+while(a==0)
+{
+printf("Capgemini");
+}
+ 
+return 0;
+}
+A. 1
+B. 2
+C. infinite
+D. none
+ 
+ 
+63) Himanshu wants to write a program to print the larger of the two inputted
+ number. He writes the following code:
+ int number1, number 2
+ input number1, number 2
+ if (??) // Statement 1
+ print number1
+ else print number2
+ end if
+ Fill in the ?? in statement 1.
+ 
+ 
+A. number2 equals number1
+B. number1 <= number2
+C. number2>number1
+D.number1>number2
+ 
+64) Sharmili wants to make a program to print the sum of all perfect cubes, where the
+value of the cubes go from 0 to 100. She writes the following program:
+integer i = 0, a // statement 1
+integer sum = 0;
+a = ( i * i * i )
+while ( i < 100 ) // statement 2
+{
+sum = sum + a // statement 3
+i = i + 1
+a = ( i * i * i ) // statement 4
+}
+print sum
+Does this program have an error? If yes, which one statement will you modify to
+correct the program?
+ Statement 1
+ Statement 3
+ Statement 4
+ Statement 2
+ 
+65) Bhavya wants to make a program to print the sum of all perfect squares, where
+the value of the squares go from 0 to 50. She writes the following program:
+integer i = 1, a // statement 1
+integer sum = 0
+while ( a < 50 ) // statement 2
+{
+10
+sum = sum + a // statement 3
+i = i + 1
+a = ( i * i ); // statement 4
+}
+print sum
+Does this program have an error? If yes, which one statement will you modify to
+correct the program?
+Statement 2
+Statement 4
+Statement 3
+Statement 1
+ 
+66) AVL rotation is performed to make a bit balanced. Which of the following types of rotation are referred in a single rotation?
+A.RR and LR
+B.LL and RL
+C.LL and RR
+D.RR and RL
+67) In a full binary tree, if the total no.ofnodes is 15, then how many internal nodes will be present?
+A.9
+B.8
+C.5
+D.7
+ 
+68) What will be the output of the following pseudocode? Declare integer c,d,r
+Integer array[6]={23,45,67,12,13 25} For(c=0;c<5;c++)
+For(d=0;d<5-c-1;d++)
+If(array[d]>array[d+1])
+ R=array[d]
+Array[d]=array[d+1]
+Array[d+1]=r
+End if
+ End for
+For(c=0;c<5;c++) Print array[c] End for
+A .67 45 23 13
+B. 45 67
+C. 67 45 23 13 12
+D.12 13 23 45 67
+ 
+69) What is the output?
+structDataFlair
+{
+int a;
+float b;
+char array[20];
+}d;
+int main()
+{
+printf("%ld", sizeof(structDataFlair));
+return 0;
+}
+A. 20
+B. 29
+C. 28
+D. 26
+ 
+70) Find the answer
+unsignedint a = -1;
+int b = ~0;
+int result;
+if (b == a)
+printf("equal");
+else
+printf("unequal");
+return 0;
+A. Compile error
+B. unequal
+C. equal
+D. 0
+ 
+71) Find the answer of below program
+int array[10] = {3, 0, 8, 1, 12, 8, 9, 2, 13, 10};
+int x, y, z;
+x = ++array[2];
+y = array[2]++;
+z = array[x++];
+printf("%d %d %d", x, y, z);
+return 0;
+A. 9 9 10
+B.10  9 10
+C. 9 10 9
+D. None
+ 
+72) what is the output of following program
+inta,b,c;
+a = b = c = 10;
+c = a++ || ++b && ++c;
+printf("%d %d %d",c, a, b);
+ 
+A.10 11 10
+B.10 11 1
+C.1 11 10
+D.1 1 10
+ 
+73) Consider a Binary tree having two pointers for each of its children. These pointers are set to NULL if the corresponding child is empty. How many NULL pointers does a binary tree with 'N' nodes have?
+A.N+1
+B. The number depends on the shape of the tree
+C. N
+D. N-1
+ 
+74) If a complete binary min- heap is made by including each integer in [ 1, 1023] exactly once. The depth of a node in the heap is the length of the path from the root of the heap to that node. Thus the root is at depth 0. The maximum depth at which integer 9 can appear:
+ 
+ A. None
+B. 9
+C. 8
+D. log 9
+ 
+75) Given below is the pre order traversal sequence of a binary search tree, what would be the post order traversal sequence of the same tree?
+30, 20, 10, 15, 25, 23, 39, 35, 42
+ 
+ A. 15, 20, 10, 23, 25, 42, 35, 39, 30
+ B. Cannot be determined
+ C. 15, 10, 23, 25, 20, 35, 42, 39, 30
+ D. 15, 10, 25, 23, 20, 42, 35, 39, 30
+ 
+76) What will be the output of the following pseudocode?
+Input a = 5, b = 6
+if ( printf ( “0” ))
+print a
+else
+print b
+a.0
+b.5
+c.05
+d.03
+77) What will be the output of the following pseudocode?
+Input a[10] = {1,2,3,4,5,6,7,8,9,10}
+print * a + 1 - * a + 3
+a.4
+b.100
+c.44
+d.error
+78) What will be the output of the following pseudocode?
+For input a = 8 & b = 9.
+Function(input a, input b)
+If(a < b)
+return function(b, a)
+elseif(b != 0)
+return (a + function(a,b-1))
+else
+return 0
+a. 56
+b.78
+c.72
+d.68
+79) What will be the output of the following pseudocode?
+Integer A[5][5],k,j;
+for (k=0;k<5;++k)
+for(j=0;j<5;j++)
+A[k][j]=A[j][k]
+end for
+end for
+a. Both A and C
+b. It makes the given matrix A, symmetric
+c. None
+d. It transposes the given matrix A
+80) Consider a full binary tree with 11 internal vertices. Calculate the total number of vertices in the tree.
+a.24
+b.22
+c.21
+d.23
+ 
+81) consider the following  statements about postfix notation
+1) the operator is written after operands
+2) the operator is written in between the operands
+3) pq- is postfix operation of p-q
+4) p-q is postfix operation of pq-
+which of the following statements are false
+A) only 2 and 3
+B)  only 1 and 4
+C) Only 1 and 3
+D) Only 2 and 4
+82) What will be the preorder traversal of a binary tree whose array representation is A,B,C,D,E,F,G?
+a. A D B E C F G
+b. A B D E C G F
+c. A B D E C F G
+d. A B E D C G F
+83) Consider the following arithmetic  expression  written in a postfix notation
+8 7 1 + - 200 +
+Find the value of the above expression
+( using stack data structure )
+a.208
+b.200
+c.192
+d.191
+84) Consider an undirected graph G with 5 vertices . the adjacency matrix of the graph is shown below
+0 0 1 0 1
+1 1 1 0 1
+0 0 0 0 0
+1 0 0 0 0
+1 0 1 0 1
+Find the no of self loops in the directed graph G
+a.2
+b.4
+c.3
+d.1
+85. Consider the following sorting techniques
+1. Quick sort
+2.  Merge sort
+Which of the above two sorting techniques is cache friendly?
+a. Only 1
+b. Only 2
+c. Both 1 and 2
+d. Neither 1 nor 2
+86) Consider a linked list L. it contains the following integers in the  given sequence 1->2->4->6. The following operations are performed .
+1. The node containing 2 is deleted .
+2.  L is reversed
+3.  The last node is deleted
+4. L is reversed
+5.  The last node is deleted .
+What is the sum of all integers present in L after all the operations have been performed .
+a.4
+b.10
+c.14
+d.6
+87) Consider the following algorithm
+Begin
+If top=-1 then stack empty
+Item=stack(top)
+Return item
+End
+It is given that symbols and varaibles have usual meaning.
+Identify the correct statement about the operation
+a. The algorithm returns the top element of the stack without deleting it
+b. The algorithm returns the top element of the stack and deletes it from the stack
+c. The algorithm inserts an element in the stack
+d. None of the mentioned option
+ 
+88) Consider the following statements about insertion sort
+1. It takes order of n time when elements are already sorted.
+2. It is a stable sorting technique
+3. It is used when number of elements is very large .
+Which of the above statement(s) are true ?
+a. Only 2 and 3
+b. Only 1
+c. All 1,2,3
+d. Only 1 and 2
+89) While performing quick sort to sort an unsorted array, joseph picked the greatest element to partition the array. Which of the following time complexity cases will occur .
+a. Cannot be occurred
+b. Average case
+c. Best case
+d. Worst case
+90) Consider a 3 ary tree of height 5. Calculate the maximum number of leaves the tree can have
+a.1028
+b. 243
+c.200
+d.64
+91) Consider a connected a cyclic graph G consisting of 5 vertices in which there is exactly one  path between  each pair of vertices . which of the following statements can be definitely true about G?
+a. G is complete graph
+b. G has atleast one cycle
+c. G is a tree
+d. None of the mentioned options
+ 
+92) Consider a binary tree T consisting of exactly one leaf node which is present at level  L . what will be the number of nodes in T
+A) L
+B) L+1
+C) L+3
+D) L+5
+93) Consider the following statements
+1. Breadth first search is carried out with the help of stack
+2.  Depth first search Is carried out with the help of queue
+Which of the following statement(s) are true
+a. Only 1
+b. Only 2
+c. Both 1 and 2
+d. Neither 1 nor 2
+94) Consider a non-trivial tree T. which of the following can be the number of nodes in T
+a.2
+b.3
+c.1
+d. Cannot be determined
+95) Consider a tree consisting of 8 nodes from A to H. which of the following can be the number of paths from B to E
+a.4
+b.3
+c.1
+d.Cannot be determined
+ 
+96. What will be the output of the following pseudocode?
+n=5
+i = 0, s = 0
+Function Sample ( int n )
+while( n > 0 )
+r = n % l0
+p = 8 ^ i
+s = s + p * r
+i = i + 1
+n = n / 10
+End While
+Return s
+End Function
+ 
+ a.187
+b. 27
+c. 5 
+d. 120
+97) What will be the output of the following pseudocode?
+Input f = 6,g = 9 and set sum = 0
+integer n
+if(g > f)
+for(n = f ; n < g ; n = n + 1)
+sum = sum + n
+End for loop
+else
+print error message
+print sum
+a. 6
+b. 9
+c.15
+d. 21 
+98. What will be the output of the following pseudocode?
+if ( 0 )
+print True
+print False
+a. False
+b. Error
+c. True
+d. No output
+99. What will be the output of the following pseudocode if x=4?
+defined in preprocessing as square ( x ) x * x
+integer i
+i = 64 / square ( x )
+print i
+a.64
+b. Garbage value
+c.d4
+d.16
+100. What will be the output of the following pseudocode?
+integer n = 5
+for I = 1 to n;
+print i
+end  for
+a.6
+b.error
+c.2
+d.1
